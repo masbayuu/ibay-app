@@ -33,7 +33,7 @@ class LoginFragment : Fragment() {
 
     private fun observe() {
         viewModel.authLogin.observe(viewLifecycleOwner) {
-            if (it.isConsumd) {
+            if (it.isConsumed) {
                 Log.i("Login", "isConsumed")
             } else if(!it.isSuccess) {
                 Toast.makeText(parent, it.message, Toast.LENGTH_SHORT).show()
@@ -41,7 +41,7 @@ class LoginFragment : Fragment() {
                 Toast.makeText(parent, it.message, Toast.LENGTH_SHORT).show()
                 parent.onSuccess(it.data)
             }
-            it.isConsumd = true
+            it.isConsumed = true
         }
     }
 

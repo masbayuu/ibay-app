@@ -34,7 +34,7 @@ class RegisterFragment : Fragment() {
 
     private fun observe() {
         viewModel.authRegister.observe(viewLifecycleOwner) {
-            if (it.isConsumd) {
+            if (it.isConsumed) {
                 Log.i("Register", "isConsumed")
             } else if(!it.isSuccess) {
                 Toast.makeText(parent, it.message, Toast.LENGTH_SHORT).show()
@@ -42,7 +42,7 @@ class RegisterFragment : Fragment() {
                 Toast.makeText(parent, it.message, Toast.LENGTH_SHORT).show()
                 findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
             }
-            it.isConsumd = true
+            it.isConsumed = true
         }
     }
 
